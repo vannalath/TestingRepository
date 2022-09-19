@@ -1,7 +1,7 @@
 ---
 title: Hello This is Varun Vannalath
 subtitle: This is sample Netlify and Hugo Page Tutorial
-image: img/products-grid1.jpg
+image: img/about-direct-sourcing.jpg
 blurb:
   heading: Why Kaldi?
   text: Kaldi is the coffee store for everyone who believes that great coffee
