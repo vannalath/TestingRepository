@@ -4,10 +4,11 @@ type: products
 image: /img/products-jumbotron.jpg
 heading: What we offer
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+ Kube is a fully managed Kubernetes solution designed to provide advanced capabilities around cluster management and facilitate its integration with Apple-specific technologies. It is an internal distribution of Apple’s opinionated selection of Kubernetes components, extensions, and configuration that is deployed as multiple clusters in multiple regions.
+
+Kube offers multi-tenant clusters as namespace-as-a-service instead of the more common cluster-as-a-service offered by public cloud providers, provides an additional layer of configurations, security policies, and enforcements that are specific to Apple's needs and constraints, and serves operators and service owners as its end users, instead of cluster administrators.
+
+
 intro:
   blurbs:
     - image: /img/illustrations-coffee.svg
