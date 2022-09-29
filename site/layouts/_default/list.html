@@ -1,16 +1,199 @@
-{{ define "main" }}
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{ range .Pages}}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/blog-index.jpg" "title" "Latest stories") }}
+    <a href="{{.Permalink}}">{{.Title}}</a>
+    {{.Date}}
+    <div style="font-size:18px;">{{.Content}}</div>
 
-<div class="mw7 center">
-  <ul id="blog-list" class="flex-ns flex-wrap mhn1-ns pa3">
-      {{ range (.Paginator 4).Pages.ByPublishDate.Reverse }}
-          <li class="w-50-ns ph1-ns flex">
-            {{ .Render "li"}}
-          </li>
-      {{ end }}
-  </ul>
-  {{ partial "pagination" . }}
-</div>
+    {{end}}
+</body>
+</html> -->
 
-{{end}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="/styles.css">
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>Compliance Site</title>
+    <meta name="next-head-count" content="3" />
+   
+  </head>
+  <body>
+    <div id="__next">
+      <header color="glyph" class="css-1ghtpzt">
+        <div display="flex" class="css-ri04ru">
+          <div height="40" class="css-1jwdk8p">
+              <!-- <img
+                src="/logo.svg"
+                alt="logo"
+                width="40"
+                height="40"
+                class="css-ugkf0f"
+              /> -->
+              <span class="css-1ari3vx">
+              <a>
+                {{ partial "svg/logo.svg" (dict "fill" "#333" "width" 40
+                "height" 40)}}
+              </a>
+            </span>
+            <h1 font-size="lg" font-weight="700" class="css-yr2j5s">Compliance Site</h1>
+          </div>
+          <nav font-size="md" class="css-x9hdg7">
+            <ul style="list-style: none" class="css-5jnsia">
+              <li display="none,flex" class="css-14codzr">
+                <a href="#" class="css-208tv9">Announcements</a>
+              </li>
+              <li display="none,flex" class="css-14codzr">
+                <a
+                  href="https://kube-incidents.apple.com/"
+                  target="_blank"
+                  class="css-208tv9"
+                  >Status</a
+                >
+              </li>
+              <li display="none,flex" class="css-14codzr">
+                <a href="#" class="css-208tv9">Documentation</a>
+              </li>
+              <li display="none,flex" class="css-14codzr">
+                <a href="#" class="css-208tv9">Community</a>
+              </li>
+              <li display="none,flex" class="css-14codzr">
+                <a href="#" class="css-208tv9">Support</a>
+              </li>
+              <li display="none,flex" class="css-14codzr">
+                <button
+                  font-size="xs"
+                  title="Give Feedback"
+                  color="fill"
+                  class="css-oniwp6"
+                >
+                  Give Feedback
+                </button>
+              </li>
+              <button
+                display="block"
+                color="glyphGray"
+                width="14px"
+                class="css-ennrta"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  class="css-s08p0c"
+                >
+                  <path
+                    d="M0.437319588,24.3215258 C0.437319588,37.6108454 11.2499382,48.4234949 24.5392578,48.4234949 C29.7945774,48.4234949 34.596866,46.732132 38.553464,43.893031 L53.4132991,58.7831135 C54.1079382,59.4777527 55.0140619,59.8100413 55.9803094,59.8100413 C58.0345362,59.8100413 59.4541238,58.2696496 59.4541238,56.2460599 C59.4541238,55.279565 59.0916496,54.4036826 58.4570104,53.7694207 L43.6879176,38.9095671 C46.7988248,34.8623506 48.6412578,29.8184537 48.6412578,24.3215258 C48.6412578,11.0322062 37.8285774,0.219587629 24.5392578,0.219587629 C11.2499382,0.219587629 0.437319588,11.0322062 0.437319588,24.3215258 Z M5.60202063,24.3215258 C5.60202063,13.8713196 14.0890516,5.38428867 24.5392578,5.38428867 C34.989464,5.38428867 43.4764949,13.8713196 43.4764949,24.3215258 C43.4764949,34.771732 34.989464,43.258763 24.5392578,43.258763 C14.0890516,43.258763 5.60202063,34.771732 5.60202063,24.3215258 Z"
+                    transform="translate(2 2)"
+                  ></path>
+                </svg>
+              </button>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="css-14wi2yf">
+        <div class="css-14wi2yf">
+          <div display="flex" class="css-pivy8w">
+            <div class="css-1w9pgi1">
+              <h1 font-size="xl,1.875rem" font-weight="500" class="css-m8252i">
+                {{range where .Pages "Type" "=" "maindata"}} {{.Content}}
+                {{end}}
+              </h1>
+              <a
+                display="flex"
+                color="primary"
+                font-size="md"
+                width="200px"
+                font-weight="600"
+                class="css-1uz12ku"
+                >Get Started
+                {{partial "svg/arrow.svg"}}
+              </a>
+            </div>
+          </div>
+          <div class="css-vds0z6">
+            <div class="css-1ri2pml">
+              <div class="css-pgwfri">
+                <a
+                  href="https://stackoverflow.apple.com/questions/ask?tags=kube"
+                  color="glyph"
+                  font-weight="500"
+                  target="_blank"
+                  class="css-w6laos"
+                  >{{range where .Pages "Type" "=" "askquestions"}} {{.Title}}
+                  {{end}}</a
+                >
+                <p
+                  color="glyphGraySecondaryAlt"
+                  font-size="sm"
+                  class="css-gdw08d"
+                >
+                  {{range where .Pages "Type" "=" "askquestions"}} {{.Content}}
+                  {{end}}
+                </p>
+              </div>
+              <div class="css-pgwfri">
+                <a
+                  href="https://a1391190.slack.com/messages/CHMDQL5C6"
+                  color="glyph"
+                  font-weight="500"
+                  target="_blank"
+                  class="css-w6laos"
+                  >{{range where .Pages "Type" "=" "slack"}} {{.Title}}
+                  {{end}}</a
+                >
+                <p
+                  color="glyphGraySecondaryAlt"
+                  font-size="sm"
+                  class="css-gdw08d"
+                >
+                  {{range where .Pages "Type" "=" "slack"}} {{.Content}} {{end}}
+                </p>
+              </div>
+              <div class="css-pgwfri">
+                <a
+                  href="adir://groups/1124474"
+                  color="glyph"
+                  font-weight="500"
+                  target="_blank"
+                  class="css-w6laos"
+                  >{{range where .Pages "Type" "=" "mailinglist"}} {{.Title}}
+                  {{end}}</a
+                >
+                <p
+                  color="glyphGraySecondaryAlt"
+                  font-size="sm"
+                  class="css-gdw08d"
+                >
+                  {{range where .Pages "Type" "=" "mailinglist"}} {{.Content}}
+                  {{end}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer color="glyphGrayTertiary" class="css-wkcmjq">
+        <div display="flex" font-size="sm" class="css-1ye74er">
+          <div class="css-1gjcxsn">
+            <p class="css-fal7e0">
+              Copyright © 2022 Apple Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
